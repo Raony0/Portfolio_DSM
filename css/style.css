@@ -1,0 +1,317 @@
+/* Define as cores principais e a largura padrão do conteúdo do site. */
+:root {
+  --background: #1e1e1e; /* Cor de fundo da página. */
+  --text: #f5f0e8; /* Cor principal dos textos. */
+  --accent: #c6a989; /* Cor de destaque para títulos e detalhes. */
+  --muted: #a8a29e; /* Cor dos textos secundários. */
+  --line: #35312d; /* Cor das linhas separadoras. */
+  --content-width: 680px; /* Largura máxima do conteúdo. */
+}
+/* Faz com que o padding e a borda sejam incluídos no tamanho dos elementos. */
+* {
+  box-sizing: border-box;
+}
+/* Ativa a rolagem suave ao navegar para outras partes da página. */
+html {
+  scroll-behavior: smooth;
+}
+/* Define o estilo geral da página. */
+body {
+  margin: 0; /* Remove a margem padrão do navegador. */
+  background: var(--background); /* Aplica a cor de fundo. */
+  color: var(--text); /* Define a cor padrão dos textos. */
+  font-family: Georgia, "Times New Roman", serif; /* Define as fontes do site. */
+  font-size: 16px; /* Define o tamanho padrão do texto. */
+  line-height: 1.45; /* Define o espaçamento entre as linhas. */
+}
+/* Define a aparência padrão dos links. */
+a {
+  color: var(--text); /* Define a cor dos links. */
+  text-decoration: underline; /* Adiciona sublinhado. */
+  text-decoration-color: var(--accent); /* Define a cor do sublinhado. */
+  text-underline-offset: 4px; /* Afasta o sublinhado do texto. */
+  transition: color 0.2s ease; /* Suaviza a mudança de cor. */
+}
+/* Muda a cor dos links quando o mouse passa sobre eles ou quando recebem foco pelo teclado. */
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+}
+/* Define a área superior onde fica o menu. */
+.site-header {
+  width: 100%; /* Ocupa toda a largura disponível. */
+  padding: 24px 20px 0; /* Adiciona espaço acima e nas laterais. */
+}
+/* Organiza os links do menu de navegação. */
+.nav {
+  max-width: var(--content-width); /* Limita a largura do menu. */
+  margin: 0 auto; /* Centraliza o menu horizontalmente. */
+  display: flex; /* Organiza os links com Flexbox. */
+  justify-content: flex-end; /* Alinha os itens à direita. */
+  align-items: center; /* Centraliza os itens verticalmente. */
+  flex-wrap: wrap; /* Permite que os itens quebrem linha. */
+  gap: 12px 28px; /* Define os espaços entre os links. */
+  min-height: 42px; /* Define a altura mínima do menu. */
+}
+/* Define a aparência dos links do menu. */
+.nav a {
+  font-weight: bold; /* Deixa os textos em negrito. */
+  text-decoration: none; /* Remove o sublinhado padrão. */
+  white-space: nowrap; /* Evita que o texto quebre em várias linhas. */
+}
+/* Mantém o nome do portfólio à esquerda do menu. */
+.nav .brand {
+  margin-right: auto; /* Empurra os outros links para a direita. */
+}
+/* Destaca o link correspondente à página atual, exceto o botão. */
+.nav .active:not(.nav-button) {
+  text-decoration: underline; /* Adiciona sublinhado ao link ativo. */
+  text-decoration-color: var(--accent); /* Usa a cor de destaque. */
+  text-underline-offset: 6px; /* Afasta o sublinhado do texto. */
+}
+/* Dá aparência de botão ao link do currículo. */
+.nav-button {
+  border: 1px dashed var(--accent); /* Cria uma borda tracejada. */
+  padding: 8px 14px; /* Adiciona espaço interno ao botão. */
+}
+/* Muda o fundo do botão quando ele recebe interação ou está ativo. */
+.nav-button:hover,
+.nav-button:focus-visible,
+.active-button {
+  background: rgba(198, 169, 137, 0.08); /* Aplica um fundo bege transparente. */
+}
+/* Define a área principal de conteúdo das páginas. */
+.container {
+  width: min(var(--content-width), calc(100% - 40px)); /* Limita a largura e preserva margens laterais. */
+  margin: 64px auto 0; /* Centraliza o conteúdo e adiciona espaço acima. */
+  min-height: calc(100vh - 170px); /* Ajuda a manter o rodapé próximo ao fim da página. */
+}
+/* Organiza o texto de apresentação e a foto lado a lado. */
+.intro {
+  display: flex; /* Coloca os elementos em uma linha. */
+  align-items: center; /* Alinha o texto e a foto verticalmente. */
+  justify-content: space-between; /* Distribui o espaço entre os elementos. */
+  gap: 28px; /* Define a distância entre o texto e a foto. */
+}
+/* Permite que o texto de apresentação ocupe o espaço disponível. */
+.intro-copy {
+  flex: 1; /* Faz o texto crescer para ocupar o espaço restante. */
+  min-width: 0; /* Permite que o conteúdo encolha sem estourar o layout. */
+}
+/* Estiliza pequenos textos introdutórios acima dos títulos. */
+.eyebrow {
+  margin: 0 0 2px; /* Remove margens desnecessárias e deixa um pequeno espaço abaixo. */
+  color: var(--accent); /* Aplica a cor bege. */
+}
+/* Define características compartilhadas pelos títulos. */
+h1,
+h2,
+h3 {
+  color: var(--accent); /* Usa a cor de destaque nos títulos. */
+  line-height: 1.2; /* Aproxima as linhas dos títulos. */
+}
+/* Estiliza o título principal de cada página. */
+h1 {
+  font-size: clamp(1.65rem, 4vw, 2rem); /* Ajusta o tamanho conforme a tela, respeitando limites. */
+  margin: 0 0 20px; /* Remove a margem superior e adiciona espaço abaixo. */
+}
+/* Estiliza os títulos das seções. */
+h2 {
+  font-size: 1.15rem; /* Define o tamanho do título da seção. */
+  margin: 0 0 16px; /* Adiciona espaço abaixo do título. */
+}
+/* Estiliza títulos menores, como os nomes dos projetos. */
+h3 {
+  font-size: 1.25rem; /* Define o tamanho do subtítulo. */
+  margin: 0 0 8px; /* Adiciona espaço abaixo. */
+}
+/* Define a aparência dos links que ficam dentro de títulos h3. */
+h3 a {
+  color: var(--accent); /* Mantém o link na cor bege. */
+  text-decoration: none; /* Remove o sublinhado. */
+}
+/* Adiciona sublinhado ao link do título quando ele recebe interação. */
+h3 a:hover {
+  text-decoration: underline;
+}
+/* Define o espaçamento padrão dos parágrafos. */
+p {
+  margin: 0 0 16px; /* Remove a margem superior e adiciona espaço abaixo. */
+}
+/* Estiliza o texto principal da apresentação. */
+.lead {
+  font-size: 1.05rem; /* Deixa o texto um pouco maior que o padrão. */
+  margin-bottom: 0; /* Remove a margem inferior. */
+}
+/* Define o tamanho e a aparência da foto de perfil. */
+.profile-photo {
+  display: block; /* Faz a imagem se comportar como um bloco. */
+  width: 142px; /* Define a largura da foto. */
+  height: 170px; /* Define a altura da foto. */
+  object-fit: cover; /* Preenche a área sem distorcer a imagem. */
+  object-position: center 28%; /* Ajusta o enquadramento da foto. */
+  border: 1px solid var(--line); /* Adiciona uma borda discreta. */
+  filter: saturate(0.85); /* Reduz um pouco a saturação das cores. */
+}
+/* Cria uma linha horizontal entre as seções. */
+.separator {
+  position: relative; /* Permite posicionar o detalhe sobre a linha. */
+  height: 1px; /* Define a espessura da linha. */
+  background: var(--line); /* Define a cor da linha. */
+  margin: 30px 0 28px; /* Adiciona espaço acima e abaixo. */
+}
+/* Cria o pequeno ponto decorativo no centro da linha. */
+.separator span {
+  position: absolute; /* Permite posicionar o ponto sobre a linha. */
+  left: 50%; /* Leva o ponto ao centro horizontal. */
+  top: 50%; /* Leva o ponto ao centro vertical. */
+  width: 4px; /* Define a largura do ponto. */
+  height: 4px; /* Define a altura do ponto. */
+  border-radius: 50%; /* Transforma o quadrado em círculo. */
+  background: var(--accent); /* Aplica a cor bege. */
+  transform: translate(-50%, -50%); /* Centraliza o ponto em relação à própria posição. */
+}
+/* Define o espaçamento externo das seções de texto. */
+.text-section {
+  margin: 0 0 26px; /* Adiciona espaço abaixo de cada seção. */
+}
+/* Aplica a cor secundária aos parágrafos das seções. */
+.text-section p {
+  color: var(--muted);
+}
+/* Destaca palavras em negrito dentro das seções. */
+.text-section p strong {
+  color: var(--text); /* Deixa o texto destacado mais claro. */
+  font-weight: normal; /* Remove o negrito, mantendo apenas a diferença de cor. */
+}
+/* Define a cor padrão dos links dentro das seções. */
+.text-section a {
+  color: var(--muted);
+}
+/* Destaca os links das seções quando recebem interação. */
+.text-section a:hover,
+.text-section a:focus-visible {
+  color: var(--accent);
+}
+/* Define a margem da área de título das páginas internas. */
+.page-heading {
+  margin-bottom: 0;
+}
+/* Ajusta os espaços do título principal das páginas internas. */
+.page-heading h1 {
+  margin-top: 4px; /* Adiciona um pequeno espaço acima do título. */
+  margin-bottom: 14px; /* Define o espaço abaixo do título. */
+}
+/* Define o espaço inferior dos itens de projeto e currículo. */
+.project-preview,
+.project,
+.resume-item {
+  margin-bottom: 28px;
+}
+/* Estiliza as datas ou pequenas descrições acima dos projetos. */
+.project-preview .date,
+.date {
+  color: var(--text); /* Usa a cor principal do texto. */
+  font-size: 0.82rem; /* Deixa o texto menor. */
+  margin-bottom: 2px; /* Reduz o espaço abaixo da data. */
+}
+/* Ajusta o espaço abaixo dos títulos dos projetos em destaque. */
+.project-preview h3 {
+  margin-bottom: 8px;
+}
+/* Remove a margem inferior do último parágrafo desses elementos. */
+.project-preview p:last-child,
+.project p:last-child {
+  margin-bottom: 0;
+}
+/* Adiciona espaço acima do link para ver todos os projetos. */
+.more-link {
+  margin-top: 6px;
+}
+/* Destaca os links de navegação entre projetos. */
+.more-link a,
+.project-links a {
+  color: var(--accent);
+}
+/* Define o espaçamento das linhas separadoras internas. */
+.inner-separator {
+  margin: 26px 0;
+}
+/* Estiliza observações e textos auxiliares. */
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+/* Organiza os elementos do rodapé. */
+.footer {
+  width: min(var(--content-width), calc(100% - 40px)); /* Limita a largura e mantém margens laterais. */
+  margin: 0 auto; /* Centraliza o rodapé. */
+  padding: 18px 0 28px; /* Adiciona espaço interno acima e abaixo. */
+  border-top: 1px solid var(--line); /* Cria uma linha acima do rodapé. */
+  display: flex; /* Organiza os elementos lado a lado. */
+  align-items: center; /* Alinha os elementos verticalmente. */
+  justify-content: space-between; /* Coloca um elemento em cada extremidade. */
+  gap: 0px; /* Define a distância entre os elementos. */
+  color: var(--muted); /* Aplica a cor secundária. */
+  font-size: 0.85rem; /* Reduz o tamanho do texto. */
+}
+/* Remove a margem do parágrafo do rodapé. */
+.footer p {
+  margin: 0;
+}
+/* Define a cor dos links do rodapé. */
+.footer a {
+  color: var(--muted);
+}
+/* Aplica ajustes quando a largura da tela é de até 560 pixels. */
+@media (max-width: 560px) {
+  /* Reduz o espaço superior do menu em telas menores. */
+  .site-header {
+    padding-top: 18px;
+  }
+  /* Centraliza os links e reduz o espaçamento no menu mobile. */
+  .nav {
+    justify-content: center;
+    gap: 14px 18px;
+  }
+  /* Coloca o nome do portfólio em uma linha própria. */
+  .nav .brand {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+  /* Reduz o espaço acima do conteúdo principal. */
+  .container {
+    margin-top: 42px;
+  }
+  /* Alinha a foto e o texto pelo topo no celular. */
+  .intro {
+    align-items: flex-start;
+    gap: 16px;
+  }
+  /* Reduz o tamanho da foto em telas menores. */
+  .profile-photo {
+    width: 100px;
+    height: 126px;
+  }
+  /* Ajusta o tamanho do texto de apresentação. */
+  .lead {
+    font-size: 1rem;
+  }
+  /* Alinha os elementos do rodapé pelo topo. */
+  .footer {
+    align-items: flex-start;
+  }
+}
+/* Aplica ajustes adicionais em telas muito estreitas, de até 380 pixels. */
+@media (max-width: 380px) {
+  /* Coloca a foto acima do texto de apresentação. */
+  .intro {
+    flex-direction: column-reverse;
+  }
+  /* Diminui um pouco mais a foto em telas muito estreitas. */
+  .profile-photo {
+    width: 92px;
+    height: 112px;
+  }
+}
