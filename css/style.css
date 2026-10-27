@@ -69,17 +69,6 @@ a:focus-visible {
   text-decoration-color: var(--accent); /* Usa a cor de destaque. */
   text-underline-offset: 6px; /* Afasta o sublinhado do texto. */
 }
-/* Dá aparência de botão ao link do currículo. */
-.nav-button {
-  border: 1px dashed var(--accent); /* Cria uma borda tracejada. */
-  padding: 8px 14px; /* Adiciona espaço interno ao botão. */
-}
-/* Muda o fundo do botão quando ele recebe interação ou está ativo. */
-.nav-button:hover,
-.nav-button:focus-visible,
-.active-button {
-  background: rgba(198, 169, 137, 0.08); /* Aplica um fundo bege transparente. */
-}
 /* Define a área principal de conteúdo das páginas. */
 .container {
   width: min(var(--content-width), calc(100% - 40px)); /* Limita a largura e preserva margens laterais. */
